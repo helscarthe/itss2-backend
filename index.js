@@ -19,9 +19,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const routes = require("./routes/routes");
+const userRoutes = require("./routes/user");
 
-app.use("/api/SensorData", routes);
+app.use("/api/user", userRoutes);
 
 app.listen(8000, () => {
   console.log("Listening on port 8000");
