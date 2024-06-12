@@ -29,6 +29,23 @@ router.get("/duration/:duration", async (req, res) => {
     }
 })
 
+router.get("/getname/:name", async (req, res) => {
+  try {
+    const Data = await Model.find({name: req.params.name});
+    res.status(200).json(Data);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+})
+
+router.get("/names", async (req, res) => {
+  try {
+    const names = await Model.find({}).distinct('name');
+    res.status(200).json(names);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+})
 
 
 module.exports = router;
