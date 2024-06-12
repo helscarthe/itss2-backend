@@ -20,4 +20,15 @@ router.post("/", async (req, res) => {
     }
   })
 
+router.get("/duration/:duration", async (req, res) => {
+    try {
+      const data = await Model.find({ duration: req.params.duration });
+      res.status(200).json(data);
+    } catch (err) {
+      res.status(500).json({ message: "Data not found" });
+    }
+})
+
+
+
 module.exports = router;
