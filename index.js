@@ -23,6 +23,13 @@ const userRoutes = require("./routes/user");
 
 app.use("/api/user", userRoutes);
 
+const datapackageRoutes = require("./routes/data_package");
+
+app.use("/api/data_package",datapackageRoutes)
+
+const CartRoutes = require("./routes/Cart");
+app.use("/api/Cart",CartRoutes)
+
 app.listen(8000, () => {
   console.log("Listening on port 8000");
 })
