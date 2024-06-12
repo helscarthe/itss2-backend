@@ -47,5 +47,13 @@ router.get("/names", async (req, res) => {
   }
 })
 
+router.put("/:id", async (req, res) => {
+  try {
+    await Model.findOneAndUpdate({ _id: req.params.id }, req.body);
+    res.status(204).end();
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+})
 
 module.exports = router;

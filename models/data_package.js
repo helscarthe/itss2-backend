@@ -20,6 +20,10 @@ data_limit: {
 duration: {
     type: Number,
     required: true
+},
+description:{
+  type: String,
+  required:true
 }
 })
 
