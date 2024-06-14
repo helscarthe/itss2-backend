@@ -11,6 +11,15 @@ router.get("/", async (req, res) => {
   }
 })
 
+router.get("/:id", async (req, res) => {
+  try {
+    const data = await Model.find({ _id: req.params.id });
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(500).json({ message: "Data not found" });
+  }
+})
+
 router.post("/", async (req, res) => {
     try {
       const data = await Model.create(req.body);
