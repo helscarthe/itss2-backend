@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const schema = new mongoose.Schema({
     phoneNumber: {
         required: true,
@@ -10,7 +11,7 @@ const schema = new mongoose.Schema({
         type: String
     },
     create_at: {
-        required: true,
+        default: Date.now(),
         type: Date
     }
 });
