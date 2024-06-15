@@ -29,4 +29,13 @@ router.get("/phoneNumber/:phoneNumber", async (req, res) => {
     }
 })
 
+router.delete("/:id", async (req, res) => {
+  try {
+    await Model.findOneAndDelete({ _id: req.params.id });
+    res.status(200).end();
+  } catch (err) {
+    res.status(404).json({ message: err.message });
+  }
+})
+
 module.exports = router;

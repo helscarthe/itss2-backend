@@ -6,7 +6,7 @@ const schema = new mongoose.Schema({
         required: true,
         type: String
     },
-    package_name: {
+    packageID: {
         required: true,
         type: String
     },
